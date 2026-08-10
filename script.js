@@ -1,7 +1,4 @@
 /* ==========================================================================
-   Escola Estadual Culto à Ciência — Campinas/SP
-   Script Principal do MVP (script.js)
-   Trabalho de Conclusão de Curso (TCC)
    
    Sumário de Funcionalidades:
    1. CONTROLE DO MENU MOBILE (HAMBÚRGUER)
