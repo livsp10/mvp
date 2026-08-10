@@ -227,73 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
-    /* ==========================================================================
-       6. VALIDAÇÃO DO FORMULÁRIO DE CONTATO
-       Garante o preenchimento de campos obrigatórios antes do envio.
-       ========================================================================== */
-    const formContato = document.getElementById('form-contato');
-
-    if (formContato) {
-        formContato.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            let formularioValido = true;
-
-            const campoNome = document.getElementById('contato-nome');
-            const campoTelefone = document.getElementById('contato-telefone');
-            const campoEmail = document.getElementById('contato-email');
-            const campoMensagem = document.getElementById('contato-mensagem');
-
-            const erroNome = document.getElementById('erro-nome');
-            const erroTelefone = document.getElementById('erro-telefone');
-            const erroEmail = document.getElementById('erro-email');
-            const erroMensagem = document.getElementById('erro-mensagem');
-            const feedbackGeral = document.getElementById('form-feedback');
-
-            // Limpa mensagens anteriores
-            erroNome.textContent = '';
-            erroTelefone.textContent = '';
-            erroEmail.textContent = '';
-            erroMensagem.textContent = '';
-            feedbackGeral.className = 'form-feedback';
-            feedbackGeral.textContent = '';
-
-            // Validação do Nome
-            if (campoNome.value.trim().length < 3) {
-                erroNome.textContent = 'Por favor, digite seu nome completo (mínimo de 3 caracteres).';
-                formularioValido = false;
-            }
-
-            // Validação do Telefone
-            if (campoTelefone.value.trim().length < 8) {
-                erroTelefone.textContent = 'Por favor, digite um número de telefone válido.';
-                formularioValido = false;
-            }
-
-            // Validação do E-mail
-            const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!regexEmail.test(campoEmail.value.trim())) {
-                erroEmail.textContent = 'Por favor, insira um e-mail válido.';
-                formularioValido = false;
-            }
-
-            // Validação da Mensagem
-            if (campoMensagem.value.trim().length < 10) {
-                erroMensagem.textContent = 'A mensagem precisa ter pelo menos 10 caracteres.';
-                formularioValido = false;
-            }
-
-            // Exibição de resposta do formulário
-            if (formularioValido) {
-                feedbackGeral.classList.add('form-feedback--success');
-                feedbackGeral.textContent = 'Mensagem enviada com sucesso! A equipe da escola entrará em contato em breve.';
-                formContato.reset();
-            } else {
-                feedbackGeral.classList.add('form-feedback--error');
-                feedbackGeral.textContent = 'Por favor, corrija os campos indicados acima antes de enviar.';
-            }
-        });
+    
     }
 
 
